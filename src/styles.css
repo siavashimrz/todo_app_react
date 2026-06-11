@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Coming Soon', cursive;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  height: 100vh;
+  background-color: rgb(87, 87, 9);
+}
+
+.todo-app {
+  background-color: #f9faf4;
+  background-image: radial-gradient(circle, #4444447c 0.8px, transparent 0.8px);
+  background-size: 10px 37px;
+  height: 600px;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 2px 3px 0 1px black;
+  border: 2px solid black;
+}
+
+.title {
+  text-align: center;
+  padding: 30px 0 10px;
+  background-color: rgb(235, 235, 13);
+  box-shadow: 0 4px 0 rgb(0, 0, 0);
+  border-radius: 20px 20px 0 0;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  padding: 43px 0 20px;
+}
+
+input {
+  background-color: transparent;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 3px dashed rgb(0, 0, 0);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  background-color: rgb(235, 235, 13);
+  color: black;
+  border: 1px solid black;
+  /* border: none; */
+  box-shadow: 2px 3px 0 1px black;
+  cursor: pointer;
+}
+
+ul {
+  font-size: 1.5rem;
+  margin: 26px 90px;
+  line-height: 37px;
+}
+
+li {
+  cursor: pointer;
+}
