@@ -70,6 +70,12 @@ button {
   /* border: none; */
   box-shadow: 2px 3px 0 1px black;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover{
+  background-color: rgb(253, 253, 116);
+
 }
 
 ul {

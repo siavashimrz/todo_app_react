@@ -1,6 +1,7 @@
 import { useState } from 'react';
 function TextInput({ onAdd }) {
   const [inputText, setInputText] = useState('');
+  const [showEmptyError, setShowEmptyError] = useState(false);
 
   function handleChange(e) {
     const value = e.target.value;
@@ -9,9 +10,14 @@ function TextInput({ onAdd }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    onAdd(inputText);
-    setInputText('');
+    if(inputText.length > 0) {
+      onAdd(inputText);
+      setInputText('');
+      setShowEmptyError(false);
+    } 
+    else {
+      setShowEmptyError(true);
+    }
   }
 
   return (
@@ -22,6 +28,7 @@ function TextInput({ onAdd }) {
         id="input"
         onChange={handleChange}
         value={inputText}
+        placeholder={showEmptyError ? "Enter something here!" : ""}
       />
       <button id="add-btn">Add ⮟</button>
     </form>

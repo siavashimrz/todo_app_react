@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="todo-app">
-      <h1 className="title">To Do List</h1>
+      <h1 className="title">To-Do List</h1>
       <TextInput onAdd={handleAdd} />
       <ToDoListItems toDoList={listItem} onDelete={handleDelete} />
     </div>
