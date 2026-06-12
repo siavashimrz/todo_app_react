@@ -14,8 +14,9 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 80px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(87, 87, 9);
+  padding-bottom: 30px;
 }
 
 .todo-app {
@@ -85,5 +86,14 @@ ul {
 }
 
 li {
+  position: relative;
   cursor: pointer;
+  width: 240px;
+  user-select: none;
+}
+
+.li-container svg{
+  position: absolute;
+  right: 0;
+  margin-top: 2px;
 }
