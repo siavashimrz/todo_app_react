@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 const SVGComponent = ({onClick}) => (
   <svg
     width="25px"
@@ -29,28 +27,19 @@ const SVGComponent = ({onClick}) => (
   </svg>
 );
 
-function ToDoListItem({onDelete, item, index}){
-  const [isDone, setIsDone] = useState(false);
-
-  return (
-    <li onClick={()=> setIsDone(prev=>!prev)}>
-      <div className="li-container">
-            {isDone ? <del>{item}</del> : item}
-          {/* {item}  */}
-          <SVGComponent onClick={() => onDelete(index)} />
-      </div>
-    </li>
-  );
-}
-
-export default function ToDoListItems({ toDoList, onDelete }) {
+function ToDoListItems({ toDoList, onDelete, onIsDone }) {
   return (
     <ul>
-      {toDoList.map((item, index) => (
-        <ToDoListItem key={index} onDelete={onDelete} item={item} index={index} />
+      {toDoList.map((item) => (
+        <li key={item.id} onClick={()=> onIsDone(item.id)}>
+        <div className="li-container">
+            {item.isDone ? <del>{item.text}</del> : item.text}
+            <SVGComponent onClick={() => onDelete(item.id)} />
+        </div>
+      </li>
       ))}
     </ul>
   );
 }
 
-// export default ToDoListItems;
+export default ToDoListItems;
