@@ -29,17 +29,17 @@ function App() {
   }
 
   function handleDelete(itemId) {
-    const items = [...listItem];
-    const itemIndex = items.findIndex(item => item.id === itemId);
-    items.splice(itemIndex, 1);
-    setListItem(items);
+    setListItem(prev => prev.filter(item => item.id !== itemId));
   }
 
-  function handleIsDone(itemId){
-    const items = [...listItem];
-    const itemToChange = items.find(item => item.id === itemId);
-    itemToChange.isDone = !itemToChange.isDone;
-    setListItem(items);
+  function handleIsDone(itemId) {
+    setListItem(prev =>
+      prev.map(item =>
+        item.id === itemId
+          ? { ...item, isDone: !item.isDone }
+          : item
+      )
+    );
   }
 
   return (
