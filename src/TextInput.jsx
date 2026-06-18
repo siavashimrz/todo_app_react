@@ -30,7 +30,7 @@ function TextInput({ onAdd }) {
         value={inputText}
         placeholder={showEmptyError ? "Enter something here!" : ""}
       />
-      <button id="add-btn">Add ⮟</button>
+      <button className="add-btn" id="add-btn">Add ⮟</button>
     </form>
   );
 }

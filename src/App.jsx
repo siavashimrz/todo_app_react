@@ -8,12 +8,14 @@ function App() {
       {
         id: "f3c24a82-aeba-49e0-9679-ac34c2dc66de",
         text: 'Buy milk',
-        isDone: false
+        isDone: false,
+        isPin: false
       },
       {
         id: "3fd35dcc-b35c-4a63-a8fc-01f98302ef0b",
         text: 'Call Joe',
-        isDone: false
+        isDone: false,
+        isPin: false
       }
     ]);
   const listLength = listItem.length;
@@ -23,7 +25,8 @@ function App() {
     const newItem = {
       id: uuidv4(),
       text: inputText,
-      isDone: false
+      isDone: false,
+      isPin: false
     }
     setListItem((prev) => [...prev, newItem]);
   }
@@ -42,15 +45,27 @@ function App() {
     );
   }
 
+  function handleIsPin(itemId) {
+    console.log("pinned!");
+    setListItem(prev => prev.map(item => (
+      item.id === itemId 
+      ? {...item, isPin: !item.isPin}
+      : item
+      )))
+  }
+
   return (
     <div className="todo-app" style={{height:`${appHeight}px`}}>
       <h1 className="title">To-Do List</h1>
       <TextInput onAdd={handleAdd} />
-      <ToDoListItems toDoList={listItem} onDelete={handleDelete} onIsDone={handleIsDone} />
+      <ToDoListItems 
+        toDoList={listItem} 
+        onDelete={handleDelete} 
+        onIsDone={handleIsDone} 
+        onIsPin={handleIsPin} 
+      />
     </div>
   );
 }
-
-// let toDoList = ['joe biden', 'jush'];
 
 export default App;
