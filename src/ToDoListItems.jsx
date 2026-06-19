@@ -1,6 +1,6 @@
 function Button({children, onClickEvent}){
   return (
-    <button onClick={(e) => {
+    <button className="round-btn" onClick={(e) => {
       e.stopPropagation();
       onClickEvent();
       }
@@ -30,6 +30,9 @@ function ToDoListItem({ showPins, toDoList, onDelete, onIsDone, onIsPin }){
               {showPins
               ? <i class="fa-solid fa-thumbtack-slash"></i>
               : <i className="fa-solid fa-thumbtack"></i>}
+            </Button>
+            <Button onClickEvent={() => onIsPin(item.id)}>
+              <i class="fa-solid fa-pen"></i>
             </Button>
         </div>
       </li>

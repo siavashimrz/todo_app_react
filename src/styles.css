@@ -80,7 +80,7 @@ input:focus {
 
 ul {
   font-size: 1.5rem;
-  margin: 26px 90px;
+  margin: 26px 66px;
   line-height: 37px;
 }
 
@@ -89,4 +89,20 @@ li {
   cursor: pointer;
   width: 240px;
   user-select: none;
+}
+
+.li-container{
+
+  display: grid;
+  grid-template-columns: 200px 30px 30px 30px;
+}
+
+.round-btn{
+  margin-top: 4px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(235, 235, 13);
+  color: black;
 }
