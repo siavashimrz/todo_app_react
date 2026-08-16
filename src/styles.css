@@ -102,7 +102,38 @@ li {
   width: 27px;
   height: 27px;
   border-radius: 50%;
-  border: none;
   background-color: rgb(235, 235, 13);
   color: black;
+  border: 1px solid black;
+}
+
+@media (max-width:600px){
+  .todo-app{
+    width: 300px;
+  }
+  .add-btn {
+    font-size: 0.8rem;
+  }
+  input {
+    width: 160px;
+    font-size: 1rem;
+  }
+  ul{
+    font-size: 1.1rem;
+    margin: 26px 50px;
+  }
+  li{
+    width: 215px;
+  }
+  .li-container{
+    grid-template-columns: auto 23px 23px 23px;
+  }
+  .round-btn{
+    margin-top: 4px;
+    width: 20px;
+    height: 20px;
+  }
+  .round-btn i{
+    font-size: 10px;
+  }
 }
