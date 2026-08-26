@@ -7,4 +7,4 @@ I wrote the app from the tutorial and redesigned the look of the app too.
 I'm still updating it
 
 # Try It Here
-https://todosiavashi.netlify.app
+https://siavashimrz.github.io/todo_app_react/
