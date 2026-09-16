@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Coming Soon', cursive;
+  font-family: "Coming Soon", cursive;
 }
 
 #root {
@@ -44,7 +44,7 @@ form {
   padding: 43px 0 20px;
 }
 
-input {
+#input {
   background-color: transparent;
   padding: 0 10px;
   font-family: inherit;
@@ -53,7 +53,7 @@ input {
   border-bottom: 3px dashed rgb(0, 0, 0);
 }
 
-input:focus {
+#input:focus {
   outline: none;
 }
 
@@ -73,9 +73,8 @@ input:focus {
   transition: all 0.1s ease-in-out;
 }
 
-.add-btn:hover{
+.add-btn:hover {
   background-color: rgb(253, 253, 116);
-
 }
 
 ul {
@@ -91,13 +90,12 @@ li {
   user-select: none;
 }
 
-.li-container{
-
+.li-container {
   display: grid;
-  grid-template-columns: 200px 30px 30px 30px;
+  grid-template-columns: 200px 30px 30px 30px 30px;
 }
 
-.round-btn{
+.round-btn {
   margin-top: 4px;
   width: 27px;
   height: 27px;
@@ -107,8 +105,8 @@ li {
   border: 1px solid black;
 }
 
-@media (max-width:600px){
-  .todo-app{
+@media (max-width: 600px) {
+  .todo-app {
     width: 300px;
   }
   .add-btn {
@@ -118,22 +116,22 @@ li {
     width: 160px;
     font-size: 1rem;
   }
-  ul{
+  ul {
     font-size: 1.1rem;
     margin: 26px 50px;
   }
-  li{
+  li {
     width: 215px;
   }
-  .li-container{
+  .li-container {
     grid-template-columns: auto 23px 23px 23px;
   }
-  .round-btn{
+  .round-btn {
     margin-top: 4px;
     width: 20px;
     height: 20px;
   }
-  .round-btn i{
+  .round-btn i {
     font-size: 10px;
   }
 }

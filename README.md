@@ -1,10 +1,11 @@
-# A To-Do list  
-  
-The base and idea of this app was from https://www.appbrewery.com as a practice project.  
+# A To-Do list
 
-I wrote the app from the tutorial and redesigned the look of the app too.
+The base and idea of this app was from https://www.appbrewery.com as a practice project.
 
-I'm still updating it
+I wrote the app from the tutorial and added some custome functionality and redesigned the look of the app too.
+
+I'm still updating it!
 
 # Try It Here
+
 https://siavashimrz.github.io/todo_app_react/
