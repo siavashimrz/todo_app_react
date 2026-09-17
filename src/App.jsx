@@ -20,6 +20,7 @@ function App() {
   ]);
   const [editingItemId, setEditingItemId] = useState(null);
   const [openMenuId, setOpenMenuId] = useState(null);
+  const [deleteConfirmId, setDeleteConfirmId] = useState(null);
   const listLength = listItem.length;
   const appHeight = listLength > 9 ? (listLength + 7) * 37 : 16 * 37;
 
@@ -47,9 +48,16 @@ function App() {
     setListItem((prev) => [...prev, newItem]);
   }
 
+  function handleDeleteClick(itemId) {
+    // console.log("hey on deleteclick");
+    setDeleteConfirmId(itemId);
+    setOpenMenuId(null);
+  }
+
   function handleDelete(itemId) {
     setListItem((prev) => prev.filter((item) => item.id !== itemId));
     setOpenMenuId(null);
+    setDeleteConfirmId(null);
   }
 
   function handleIsDone(itemId) {
@@ -92,7 +100,7 @@ function App() {
       <TextInput onAdd={handleAdd} />
       <ToDoListItems
         toDoList={listItem}
-        onDelete={handleDelete}
+        onDelete={handleDeleteClick}
         onIsDone={handleIsDone}
         onIsPin={handleIsPin}
         onEdit={handleEdit}
@@ -101,6 +109,31 @@ function App() {
         openMenuId={openMenuId}
         onOpenMenu={setOpenMenuId}
       />
+      {deleteConfirmId !== null && (
+        <div className="delete-overlay">
+          <div className="delete-confirm">
+            <p>
+              Are you sure you want to delete "
+              {listItem.find((item) => item.id === deleteConfirmId)?.text}
+              "?
+            </p>
+            <div className="delete-confirm-buttons">
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(deleteConfirmId)}
+              >
+                Delete
+              </button>
+              <button
+                className="cancel-btn"
+                onClick={() => setDeleteConfirmId(null)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

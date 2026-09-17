@@ -103,6 +103,62 @@ li {
   background-color: rgb(235, 235, 13);
   color: black;
   border: 1px solid black;
+  cursor: pointer;
+}
+
+.delete-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.delete-confirm {
+  position: fixed;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 25px;
+  min-height: 120px;
+  width: 300px;
+
+  /* z-index: 1000; */
+}
+
+.delete-confirm > p {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.delete-confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.delete-confirm-buttons button {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #ff6b6b;
+}
+
+.cancel-btn {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 600px) {
